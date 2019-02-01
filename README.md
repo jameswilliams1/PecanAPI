@@ -29,6 +29,7 @@ You can then access the web front end at [http://localhost:5000/]() and the API 
 Supported URL query arguments:
 
 
+
 String fields containing all or part of a search term can be found using the syntax:
 ```
 http://localhost:5000/api/?<field>=<value>
@@ -65,4 +66,4 @@ Due to time constraints the following features were not implemented:
 - No pagination is present, so the API would not work with extremely large amounts of data
 - No ability to search customer values that use lists (such as traits etc.) although this could be implemented in a similar way to the current search method for strings
 - Not all bad requests are handled, so some searches with bad syntax may return an empty json rather than a 400 error
-- No ability to add new users via the API
+- No ability to add new customers via the API
