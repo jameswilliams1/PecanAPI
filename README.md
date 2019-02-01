@@ -38,3 +38,13 @@ Numerical fields can be searched using the syntax:
 /api/?<field>[operator]=<value>
 ```
 Supported operators are 'eq', 'lte' and 'gte' for equal, less than or equal to and greater than or equal to respectively.
+
+Any number of filters can be used simultaneously by chainng them with '&', such as:
+```
+/api/?name=Joe&age[gte]=25
+```
+Search results can be sorted using the syntax:
+```
+/api/?sort=<field>[direction]
+```
+Where supported directions are 'asc' and 'desc' for ascending and descending respectively. Sorting works for both string and numerical fields, sorting alphabetically or numerically as expected, with missing values appearing at the end.
