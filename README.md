@@ -31,11 +31,11 @@ Supported URL query arguments:
 
 String fields containing all or part of a search term can be found using the syntax:
 ```
-[http://localhost:5000/api/?<field>=<value>]()
+http://localhost:5000/api/?<field>=<value>
 ```
 Numerical fields can be searched using the syntax:
 ```
-[http://localhost:5000/api/?<field>[operator]=<value>]()
+http://localhost:5000/api/?<field>[operator]=<value>
 ```
 Supported operators are 'eq', 'lte' and 'gte' for equal, less than or equal to and greater than or equal to respectively.
 
