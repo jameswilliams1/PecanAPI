@@ -41,6 +41,10 @@ class Customers(Resource):
             elif 'age[' in key or 'income[' in key or 'wealth[' in key: # Filters numerical values using supplied operator
                 key_sub, operator = key.split('[', 1)
                 operator = operator[:-1]
+                if key_sub == 'age' or key_sub == 'income' or key_sub == 'wealth':
+                    pass
+                else:
+                    return 'Bad request: {} is not a valid field.'.format(key_sub), 400
                 try:
                     compare_number = float(search_arguments[key])
                 except ValueError:
@@ -50,6 +54,11 @@ class Customers(Resource):
                 sort_value, direction = search_arguments['sort'].split('[', 1)
                 direction = direction[:-1]
                 is_desc = False
+                accepted_values = ['age', 'income', 'wealth', 'first_name', 'last_name', 'gender', 'marital_status', 'title', 'has_children']
+                if any(term == sort_value for term in accepted_values):
+                    pass
+                else:
+                    return 'Bad request: {} is not a valid field.'.format(sort_value), 400
                 if direction == 'asc':
                     pass
                 elif direction == 'desc':
